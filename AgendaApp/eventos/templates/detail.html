@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <a href="/"><- retornar</a>
+    <h1>{{ evento.titulo_do_evento }}</h1>
+    <h2>{{ evento.data_e_hora }}</h2>
+    <p>{{ evento.descricao }}</p>
+{% endblock conteudo %}

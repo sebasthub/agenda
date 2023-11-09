@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from eventos.views import index
+from eventos.views import index,evento_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index)
+    path('',index, name='index'),
+    path('evento/<int:evento_pk>/', evento_detail, name='detalhes_do_evento')
 ]
