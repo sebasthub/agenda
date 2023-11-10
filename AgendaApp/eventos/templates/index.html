@@ -3,7 +3,7 @@
 {% block conteudo %}
     <ul>
     {% for evento in eventos %}
-        <li><a href="{% url "detalhes_do_evento" evento.id %}">{{evento.titulo_do_evento}}</a></li>
+        <li><a href="{% url "detalhes_do_evento" evento.id %}">{{evento.titulo_do_evento}}</a> - <a href="{% url "editar_evento" evento.id%}">editar</a></li>
     {% endfor %}
     </ul>
     <a href="{% url "cadastra_evento" %}">+ cadastrar um evento</a>

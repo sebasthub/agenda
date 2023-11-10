@@ -5,11 +5,11 @@
     {% csrf_token %}
     {{ form }}
     <label for="titulo_evento">titulo do evento: </label>
-    <input id="titulo_evento" type="text" name="titulo_evento" value="{{ titulo_evento }}">
+    <input id="titulo_evento" type="text" name="titulo_evento" value="{{ evento.titulo_do_evento }}">
     <label for="data_hora">data e hora: </label>
-    <input id="data_hora" type="datetime-local" name="data_hora" value="{{ data_hora }}">
+    <input id="data_hora" type="datetime-local" name="data_hora" value="{{ evento.data_e_hora }}">
     <label for="descricao">descricao: </label>
-    <input id="descricao" type="text" name="descricao" value="{{ descricao }}">
+    <input id="descricao" type="text" name="descricao" value="{{ evento.descricao }}">
     <input type="submit" value="OK">
 </form>
 {% endblock conteudo %}
