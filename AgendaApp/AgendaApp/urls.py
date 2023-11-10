@@ -24,4 +24,5 @@ urlpatterns = [
     path('evento/<int:evento_pk>/', evento_detail, name='detalhes_do_evento'),
     path('evento/cadastro/', evento_cadastro, name='cadastra_evento'),
     path('evento/edita/<int:evento_pk>/', evento_editar, name='editar_evento'),
+    path('evento/exclui/<int:evento_pk>/', evento_exclui, name='excluir_evento')
 ]

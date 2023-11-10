@@ -55,4 +55,12 @@ def evento_editar(request,evento_pk):
         return render(request=request, context=contexto, template_name='cadastro.html')
     
 
+def evento_exclui(request,evento_pk):
+    evento = get_object_or_404(Evento, pk=evento_pk)
+    evento.delete()
+    eventos = Evento.objects.all()
+    contexto = {
+        "eventos": eventos,
+    }
+    return render(request=request, template_name='index.html',context=contexto)
 
