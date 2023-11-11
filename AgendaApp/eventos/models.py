@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+from django.utils import timezone
 
 # Create your models here.
 class Evento(models.Model):
@@ -7,6 +9,4 @@ class Evento(models.Model):
     descricao = models.CharField(max_length=50)
     def __str__(self) -> str:
         return self.titulo_do_evento
-        
-        
-    
+     
