@@ -4,6 +4,11 @@
 <a href="{% url "index" %}"><-voltar</a>
 <form action="" method="post">
     {% csrf_token %}
+    {% if form.data.errors %}
+    <div style="color: red">
+        {{ form.data.errors }}
+    </div>
+    {% endif %}
     <table>
     {{ form.as_table }}
     </table>

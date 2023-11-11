@@ -33,6 +33,11 @@ def evento_cadastrar(request):
                 "eventos": eventos,
             }
             return render(request=request, template_name='index.html',context=contexto)
+        else:
+            contexto = {
+                "form": form,
+            }
+            return render(request=request,template_name='cadastro.html', context=contexto)
     else:
         form = EventoForm()
         contexto = {
@@ -55,7 +60,12 @@ def evento_editar(request,evento_pk):
             contexto = {
                 "eventos": eventos,
             }
-        return render(request=request, template_name='index.html',context=contexto)
+            return render(request=request, template_name='index.html',context=contexto)
+        else:
+            contexto = {
+                "form": form,
+            }
+            return render(request=request,template_name='cadastro.html', context=contexto)
     else:
         evento = get_object_or_404(Evento, pk=evento_pk)
         form = EventoForm({"titulo_do_evento":evento.titulo_do_evento,"data":evento.data_e_hora.date(),"hora":evento.data_e_hora.time(),"descricao": evento.descricao})
