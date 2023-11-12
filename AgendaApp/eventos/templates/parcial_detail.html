@@ -1,14 +1,10 @@
-{% extends "base.html" %}
-
-{% block conteudo %}
-<div class="card" style="width: 25rem">
-    <a class="btn-close" href="{% url "index" %}"></a>
+<div id="detail" class="card" style="width: 25rem;">
+    <button class="btn-close" onclick="feixaAba()"></button>
     <h1 class="card-title" style="margin: 10px">{{ evento.titulo_do_evento }}</h1>
     <h2 class="card-subtitle mb-2 text-body-secondary" style="margin: 10px">{{ evento.data_e_hora }}</h2>
     <p class="card-text" style="margin: 10px">{{ evento.descricao }}</p>
-    <div style="display: flex; margin: 1rem">
+    <div style="display: flex; margin: 10px">
         <a href="{% url "editar_evento" evento.id%}" class="btn btn-primary" style="width: 5rem; margin-right: 10px">editar</a>
         <a href="{% url "excluir_evento" evento.id%}" class="btn btn-primary" style="width: 5rem">excluir</a>
     </div>
-<div>
-{% endblock conteudo %}
+<div> 

@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    <div style="display: flex;width: 100%; overflow: hidden; flex-wrap: wrap;">
+    <div class="lista">
         {% for evento in eventos %}
             <div class="card" style="width: 18rem; margin: 1rem">
                 <div class="card-body">
                   <h5 class="card-title">{{evento.titulo_do_evento}}</h5>
                   <h6 class="card-subtitle mb-2 text-body-secondary">{{evento.data_e_hora}}</h6>
-                  <a href="{% url "detalhes_do_evento" evento.id %}" class="btn btn-primary">expandir</a>
+                  <a hx-get="{% url "detalhes_do_evento" evento.id %}" hx-target="#subistituir" class="btn btn-primary">expandir</a>
                 </div>
             </div>
         {% endfor %}
     </div>
+    <div id="subistituir" style="position: absolute;"></div>
 {% endblock conteudo %}

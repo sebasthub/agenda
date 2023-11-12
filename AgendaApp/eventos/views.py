@@ -16,6 +16,8 @@ def evento_detail(request,evento_pk):
     contexto = {
         "evento":evento
     }
+    if request.htmx:
+        return render(request=request, context=contexto, template_name='parcial_detail.html')
     return render(request=request, context=contexto, template_name='detail.html')
 
 def evento_cadastrar(request):
