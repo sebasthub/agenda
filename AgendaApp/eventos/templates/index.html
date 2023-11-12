@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    <ul>
-    {% for evento in eventos %}
-        <li><a href="{% url "detalhes_do_evento" evento.id %}">{{evento.titulo_do_evento}}</a> - <a href="{% url "editar_evento" evento.id%}">editar</a> - <a href="{% url "excluir_evento" evento.id%}">excluir</a></li>
-    {% endfor %}
-    </ul>
-    <a href="{% url "cadastra_evento" %}">+ cadastrar um evento</a>
+    <div>
+        <ul class="list-group" style="width: 20rem;">
+        {% for evento in eventos %}
+            <li class="list-group-item md-5"><a href="{% url "detalhes_do_evento" evento.id %}">{{evento.titulo_do_evento}}</a> - <a href="{% url "editar_evento" evento.id%}">editar</a> - <a href="{% url "excluir_evento" evento.id%}">excluir</a></li>
+        {% endfor %}
+        </ul>
+    </div>
 {% endblock conteudo %}

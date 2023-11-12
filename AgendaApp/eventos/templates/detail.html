@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    <a href="{% url "index" %}"><- retornar</a>
-    <h1>{{ evento.titulo_do_evento }}</h1>
-    <h2>{{ evento.data_e_hora }}</h2>
-    <p>{{ evento.descricao }}</p>
+<div class="card" style="width: 25rem">
+    <a class="btn-close" href="{% url "index" %}"></a>
+    <h1 class="card-title">{{ evento.titulo_do_evento }}</h1>
+    <h2 class="card-subtitle mb-2 text-body-secondary">{{ evento.data_e_hora }}</h2>
+    <p class="card-text">{{ evento.descricao }}</p>
+<div>
 {% endblock conteudo %}
