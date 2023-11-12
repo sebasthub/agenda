@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    <div>
-        <ul class="list-group" style="width: 20rem;">
+    <div style="display: flex;width: 100%; overflow: hidden; flex-wrap: wrap;">
         {% for evento in eventos %}
-            <li class="list-group-item md-5"><a href="{% url "detalhes_do_evento" evento.id %}">{{evento.titulo_do_evento}}</a> - <a href="{% url "editar_evento" evento.id%}">editar</a> - <a href="{% url "excluir_evento" evento.id%}">excluir</a></li>
+            <div class="card" style="width: 18rem; margin: 1rem">
+                <div class="card-body">
+                  <h5 class="card-title">{{evento.titulo_do_evento}}</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">{{evento.data_e_hora}}</h6>
+                  <a href="{% url "detalhes_do_evento" evento.id %}" class="btn btn-primary">expandir</a>
+                </div>
+            </div>
         {% endfor %}
-        </ul>
     </div>
 {% endblock conteudo %}
