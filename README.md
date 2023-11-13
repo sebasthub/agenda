@@ -10,11 +10,12 @@ Certifique-se de ter o Python instalado no seu ambiente de desenvolvimento. Voc�
 ```bash
 pip install -r AgendaApp/requirements.txt
 ```
-##rodar as migrações:
+## iniciar o servidor:
+rodar as migrações:
 ```bash
 python manage.py migrate
 ```
-##para iniciar o servidor
+iniciar o servidor:
 ```bash
 python manage.py runserver
 ```
