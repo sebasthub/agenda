@@ -1,0 +1,15 @@
+<div class="card" style="width:18rem">
+    <button class="btn-close" onclick="feixaAba()"></button>
+    <form action="{% url "cadastra_evento" %}" method="post">
+        {% csrf_token %}
+        {% if form.data.errors %}
+        <div style="color: red">
+            {{ form.data.errors }}
+        </div>
+        {% endif %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="enviar">
+    </form>
+</div>

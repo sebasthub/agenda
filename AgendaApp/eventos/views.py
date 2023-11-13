@@ -45,6 +45,8 @@ def evento_cadastrar(request):
         contexto = {
             "form": form
         }
+        if request.htmx:
+            return render(request=request,template_name='parcial_cadastro.html', context=contexto)
         return render(request=request,template_name='cadastro.html', context=contexto)
 
 def evento_editar(request,evento_pk):
