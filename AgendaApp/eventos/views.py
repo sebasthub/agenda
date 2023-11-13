@@ -68,14 +68,20 @@ def evento_editar(request,evento_pk):
         else:
             contexto = {
                 "form": form,
+                "id": evento_pk
             }
+            if request.htmx:
+                return render(request=request,template_name='parcial_update.html', context=contexto)
             return render(request=request,template_name='cadastro.html', context=contexto)
     else:
         evento = get_object_or_404(Evento, pk=evento_pk)
         form = EventoForm({"titulo_do_evento":evento.titulo_do_evento,"data":evento.data_e_hora.date(),"hora":evento.data_e_hora.time(),"descricao": evento.descricao})
         contexto = {
-            "form":form
+            "form":form,
+            "id": evento_pk
         }
+        if request.htmx:
+            return render(request=request,template_name='parcial_update.html', context=contexto)
         return render(request=request, context=contexto, template_name='cadastro.html')
     
 
