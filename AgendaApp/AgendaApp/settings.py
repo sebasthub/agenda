@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-($$^a-q=41i1e^in+^3ev#)_9c#9os$&yv62p_j)_-914_@738
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['15.229.176.66', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['agenda.sebasnet.cloud', 'localhost', '0.0.0.0']
 
 
 # Application definition
