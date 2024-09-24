@@ -78,10 +78,15 @@ WSGI_APPLICATION = 'AgendaApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'agenda',
+        'USER': 'postgres',
+        'PASSWORD': 'sn100102',
+        'HOST': '15.229.176.66',  # Ou o endereço do servidor PostgreSQL
+        'PORT': '5432',  # O padrão do PostgreSQL é 5432
     }
 }
+
 
 
 # Password validation
