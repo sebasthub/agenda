@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'agenda',
-        'USER': 'postgres',
-        'PASSWORD': 'sn100102',
-        'HOST': '15.229.176.66',  # Ou o endereço do servidor PostgreSQL
+        'USER': 'agenda',
+        'PASSWORD': 'agenda',
+        'HOST': 'postgres_agenda',  # Ou o endereço do servidor PostgreSQL
         'PORT': '5432',  # O padrão do PostgreSQL é 5432
     }
 }
