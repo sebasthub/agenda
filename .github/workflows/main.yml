@@ -44,9 +44,7 @@ jobs:
     needs: [CI]
     
     steps:
-      - uses: TNT-Likely/webhook-action@V0.1.2
+      - uses: lakuapik/gh-actions-http-status@v1
         with:
-              # webhook url
-              webhookUrl: 'http://automatic.sebasnet.cloud/webhook/421fc01b-5a2c-43cd-9d69-fc189723b51d'
-              # webhook data
-              data: "{'ok': 'ok'}"
+              sites: 'http://automatic.sebasnet.cloud/webhook/421fc01b-5a2c-43cd-9d69-fc189723b51d'
+              expected: 200
