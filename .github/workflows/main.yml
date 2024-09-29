@@ -1,4 +1,4 @@
-name: Criar Imagem e Subir Para o Hub
+name: Criar Imagem e Subir Para o Hub e fazer delploy
 
 on:
   push:
@@ -39,24 +39,14 @@ jobs:
             sebashub/agenda_app:${{ steps.get_tag.outputs.tag }}
             sebashub/agenda_app:latest
   Deploy:
-    name: Deploy to EC2
+    name: Deploy
     runs-on: ubuntu-latest
     needs: [CI]
     
     steps:
-      - uses: actions/checkout@v2
-      - name: Deploy
-        env:
-            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-            HOSTNAME: ${{secrets.SSH_HOST}}
-            USER_NAME: ${{secrets.USER_NAME}}
-      
-        run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-
-              # Now we have got the access of EC2 and we will start the deploy .
-              cd /home/ubuntu &&
-              sudo python3 ./update_agenda.py
-              '
-            
+      - uses: TNT-Likely/webhook-action@V0.1.2
+        with:
+              # webhook url
+              webhookUrl: 'http://automatic.sebasnet.cloud/webhook-test/421fc01b-5a2c-43cd-9d69-fc189723b51d'
+              # webhook data
+              data: "{'ok': 'ok'}"
