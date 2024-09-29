@@ -47,6 +47,6 @@ jobs:
       - uses: TNT-Likely/webhook-action@V0.1.2
         with:
               # webhook url
-              webhookUrl: 'http://automatic.sebasnet.cloud/webhook-test/421fc01b-5a2c-43cd-9d69-fc189723b51d'
+              webhookUrl: 'http://automatic.sebasnet.cloud/webhook/421fc01b-5a2c-43cd-9d69-fc189723b51d'
               # webhook data
               data: "{'ok': 'ok'}"
