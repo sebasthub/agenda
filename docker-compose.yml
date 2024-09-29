@@ -9,5 +9,8 @@ services:
       POSTGRES_DB: agenda
     volumes:
       - ./data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+  agenda_app:
+    depends_on:
+      - db
+    image: sebashub/agenda_app:latest
+    container_name: agenda_app
