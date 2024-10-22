@@ -19,5 +19,5 @@ iniciar o servidor:
 ```bash
 python manage.py runserver
 ```
-Acesse o aplicativo em seu navegador em http://localhost:8000/
+Acesse o aplicativo em seu navegador em http://localhost:8000/ .
 
