@@ -36,5 +36,4 @@ jobs:
           context: .
           push: true
           tags: |
-            sebashub/agenda_app:${{ steps.get_tag.outputs.tag }}
             sebashub/agenda_app:latest
